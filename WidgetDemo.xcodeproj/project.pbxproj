@@ -11,6 +11,7 @@
 		F2BEA19728E3B4980003B0CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BEA19628E3B4980003B0CF /* ContentView.swift */; };
 		F2BEA19928E3B4990003B0CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BEA19828E3B4990003B0CF /* Assets.xcassets */; };
 		F2BEA19C28E3B4990003B0CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BEA19B28E3B4990003B0CF /* Preview Assets.xcassets */; };
+		F2BEA1A328E3B53D0003B0CF /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BEA1A228E3B53D0003B0CF /* WeatherDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		F2BEA19628E3B4980003B0CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2BEA19828E3B4990003B0CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2BEA19B28E3B4990003B0CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2BEA1A228E3B53D0003B0CF /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				F2BEA19628E3B4980003B0CF /* ContentView.swift */,
 				F2BEA19828E3B4990003B0CF /* Assets.xcassets */,
 				F2BEA19A28E3B4990003B0CF /* Preview Content */,
+				F2BEA1A228E3B53D0003B0CF /* WeatherDetailView.swift */,
 			);
 			path = WidgetDemo;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BEA1A328E3B53D0003B0CF /* WeatherDetailView.swift in Sources */,
 				F2BEA19728E3B4980003B0CF /* ContentView.swift in Sources */,
 				F2BEA19528E3B4980003B0CF /* WidgetDemoApp.swift in Sources */,
 			);
