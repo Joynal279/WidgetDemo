@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct WeatherDetailView: View {
+    
     var name: String
     var icon: String
+    
     var body: some View {
         VStack {
             Image(systemName: icon)
