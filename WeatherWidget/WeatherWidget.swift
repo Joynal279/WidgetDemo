@@ -36,22 +36,28 @@ struct Provider: IntentTimelineProvider {
         completion(timeline)
     }
 }
-
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let configuration: ConfigurationIntent
-}
-
-
+//
+//struct SimpleEntry: TimelineEntry {
+//    let date: Date
+//    let configuration: ConfigurationIntent
+//}
+//
 
 
 struct WeatherWidgetEntryView : View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) var widgetFamily
 
     var body: some View {
         ZStack {
             Color("weatherBackgroundColor")
-            WeatherSubView(entry: entry)
+            HStack {
+                WeatherSubView(entry: entry)
+                if widgetFamily == .systemMedium {
+                    Image(entry.image)
+                        .resizable()
+                }
+            }
             
         }
     }
@@ -67,13 +73,18 @@ struct WeatherWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 struct WeatherWidget_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherWidgetEntryView(entry: WeatherEntry(date: Date(), city: "London", temperature: 89, description: "Thunder Storm", icon: "cloud.bolt.rain", image: "thunder"))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Group {
+            WeatherWidgetEntryView(entry: WeatherEntry(date: Date(), city: "London", temperature: 89, description: "Thunder Storm", icon: "cloud.bolt.rain", image: "thunder"))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            WeatherWidgetEntryView(entry: WeatherEntry(date: Date(), city: "London", temperature: 89, description: "Thunder Storm", icon: "cloud.bolt.rain", image: "thunder"))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+        }
     }
 }
 
