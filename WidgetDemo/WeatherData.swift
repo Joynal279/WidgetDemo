@@ -8,6 +8,7 @@
 import SwiftUI
 import WidgetKit
 
+
 struct WeatherEntry: TimelineEntry {
     var date: Date
     let city: String
@@ -16,6 +17,19 @@ struct WeatherEntry: TimelineEntry {
     let icon: String
     let image: String
     let url: URL?
+}
+
+struct LocationData: Identifiable {
+    let city: String
+    let timeline: [WeatherEntry]
+    
+    var id: String {
+        city
+    }
+    
+    static let london = LocationData(city: "London", timeline: londonTimeline)
+    static let miami = LocationData(city: "Miami", timeline: miamiTimeline)
+    
 }
 
 let hairlUrl = URL(string: "weatherwidget://hail")

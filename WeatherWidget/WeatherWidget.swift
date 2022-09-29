@@ -20,13 +20,21 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        
+        var chosenLocation: LocationData
+        if configuration.locations == .londonUK {
+            chosenLocation = .london
+        }else{
+            chosenLocation = .miami
+        }
+        
         var entries: [WeatherEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         var eventDate = Date()
         let halfMinute: TimeInterval = 30
         
-        for var entry in londonTimeline {
+        for var entry in chosenLocation.timeline {
             entry.date = eventDate
             eventDate += halfMinute
             entries.append(entry)
